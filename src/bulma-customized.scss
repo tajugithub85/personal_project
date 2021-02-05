@@ -1,0 +1,51 @@
+// - Colors -
+
+$blue: #00466b;
+$green: #006b54;
+$orange: #ff470f;
+$purple: #771b61;
+$red: #863f4b;
+$turquoise: #00d1b2;
+$yellow: #ede9ab;
+$primary: $purple;
+
+$grey-darker: #363636;
+$grey-dark: #4a4a4a;
+$grey: #7a7a7a;
+$grey-light: #b5b5b5;
+
+$text-light: $grey-dark;
+$border: $grey-light;
+$border-hover: $grey;
+$control-icon: $grey;
+
+// Other variables
+
+@import "../node_modules/bulma/bulma.sass";
+
+.nav-item img {
+  max-height: 70px;
+}
+
+.title.is-primary {
+  color: $purple;
+
+  &:before {
+    content: " | ";
+  }
+}
+
+.input, .textarea, .select select {
+  @include placeholder {
+    color: $grey;
+  }
+}
+
+.container {
+  @include desktop {
+    &.is-fluid {
+      margin: 0 30px;
+      max-width: none;
+    }
+  }
+}

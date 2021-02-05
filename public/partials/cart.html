@@ -1,0 +1,98 @@
+<div class="container">
+	<div class="columns">
+		<div class="column">
+			<div class="panel">
+				<div class="panel-heading">
+					<div class="panel-title">
+						<div class="columns">
+							<div class="column is-half">
+								<h5 style="color: purple" style="margin: auto"><span class="fa fa-shopping-cart" style="margin-top:3.5px" ></span> Shopping Cart</h5>
+							</div>
+							<div class="column is-half">
+								<button type="button" class="button is-outlined" style="float:right" ui-sref="productLineNutri">
+									<span></span> &lt; Continue shopping
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+					<div ng-if="!master.cart.hasOwnProperty(1) && !master.cart.hasOwnProperty(2)" style="padding: 20px">
+						<h1 class="title is-3">Your shopping cart is empty! </h1><br>
+						<a class="button is-primary" ui-sref="home">Find some items</a>
+					</div>
+					<div class="columns" style="margin: 0" ng-if="master.cart.hasOwnProperty(1)">
+						<div class="column is-narrow"><a ui-sref="productDetail"><img style="margin: 20px 50px;" class="image is-128x128" src="images/VitaminB6.jpg"></a> </div>
+						<div class="column is-3" style="align-self: center;">
+							<h4><a ui-sref="productDetail"><strong>Nature Made Vitamin B6 Tablets</strong></a></h4>
+							<h4><small>The vitamin B6 group is especially important to the function of the central nervous system, skin, and blood. Vitamin B6 is involved in the formation of red blood cells.</small></h4>
+
+
+						</div>
+						<div class="column is-3 has-text-right" style="align-self: center;">
+							<h6 style="display: inline-block; vertical-align: middle; margin-right: 1.5em;"><strong>$5.15 <span class="text-muted">x</span></strong></h6>
+							<input type="number" class="input is-success" value="1" min="1" max="99" maxlength="2"
+							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+							style="width: 7em; vertical-align: middle;" ng-model="master.cart[1]" required>
+						</div>
+						<div class="column is-2" style="align-self: center;">
+								<strong> = {{master.cart[1]*5.15 | currency}}</strong>
+						</div>
+						<div class="column is-1" style="align-self: center;">
+
+							<button type="button" class="button is-danger"
+								ng-click="master.removeItemFromCart({productId: 1})">
+
+								<span class="fa fa-trash-o"> </span>
+							</button>
+						</div>
+					</div>
+
+					<hr style="margin: 0" ng-if="master.cart.hasOwnProperty(1)">
+					<div class="columns" style="margin: 0" ng-if="master.cart.hasOwnProperty(2)">
+						<div class="column is-narrow"><a ui-sref="productDetail({id: 2})"><img style="margin: 20px 50px;" class="image is-128x128" src="images/VitaminE.jpg"></a> </div>
+						<div class="column is-3" style="align-self: center;">
+								<h4><a ui-sref="productDetail({id: 2})"><strong>Nature Made Vitamin E Tablets</strong></a></h4><h4><small>Vitamin E is key for strong immunity,  healthy skin and eyes, and also helps repair damaged cells.</small></h4>
+
+						</div>
+						<div class="column is-3 has-text-right" style="align-self: center;">
+							<h6 style="display: inline-block; vertical-align: middle; margin-right: 1.5em;"><strong>$8.99 <span class="text-muted">x</span></strong></h6>
+							<input type="number" class="input is-success" value="1" min="1" max="99" maxlength="2"
+							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+							style="width: 7em; vertical-align: middle;" ng-model="master.cart[2]" required>
+						</div>
+						<div class="column is-2 " style="align-self: center;">
+								<strong> = {{master.cart[2]*8.99 | currency}}</strong>
+						</div>
+						<div class="column is-2" style="align-self: center;">
+
+							<button type="button" class="button is-danger"
+								ng-click="master.removeItemFromCart({productId: 2})">
+
+								<span class="fa fa-trash-o"> </span>
+							</button>
+						</div>
+					</div>
+
+					<hr style="margin-top: 0" ng-if="master.cartCount > 0">
+				<div class="panel-footer" ng-if="master.cartCount > 0">
+					<div class="columns">
+
+						<div class="column is-8" style="align-self: center;">
+							<h5 class="title is-5" style="float: right;">Total <strong>{{master.totalPrice | currency}}</strong></h5>
+						</div>
+						<div class="column is-3">
+							<button type="button" class="button is-primary" ui-sref="checkout" style="width:100px;">
+								Checkout
+							</button>
+						</div>
+					</div>
+
+					<div>
+						<span></span>
+					</div>
+
+			</div>
+		</div>
+	</div>
+</div>

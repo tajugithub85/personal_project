@@ -1,0 +1,14 @@
+.st-promotion-hero {
+  position: relative;
+  margin-bottom: 40px;
+  font-size: 0;
+}
+
+  .st-promotion-hero .notification {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    font-size: initial;
+    font-size: 1rem;
+  }

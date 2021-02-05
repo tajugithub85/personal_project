@@ -1,0 +1,138 @@
+<div class="notification is-warning" ng-if="vm.term != vm.keyword">
+  Did you mean <b><a ui-sref="searchResult({term: vm.keyword})">{{vm.keyword}}</a></b>?
+</div>
+<span class="title is-primary">Search Results for<strong>"{{vm.term}}"</strong></span>
+<br>
+<br>
+<br>
+<div class="columns">
+  <div class="column is-2">
+    <nav class="panel">
+      <p class="panel-heading">
+        <strong>Brand</strong>
+      </p>
+      <div class="panel-block is-active">
+        <label class="checkbox">
+          <input type="checkbox">
+          Ensure (13)
+        </label>
+      </div>
+      <div class="panel-block is-active">
+        <label class="checkbox">
+          <input type="checkbox">
+          Naturade (10)
+        </label>
+      </div>
+      <div class="panel-block is-active">
+        <label class="checkbox">
+          <input type="checkbox">
+          Vega (8)
+        </label>
+      </div>
+      <div class="panel-block is-active">
+        <label class="checkbox">
+          <input type="checkbox">
+          Radiance (3)
+        </label>
+      </div>
+      <div class="panel-block">
+        <button class="button is-primary is-outlined is-fullwidth" ui-sref="underConstruction">
+          Apply filters
+        </button>
+      </div>
+    </nav>
+    <nav class="panel">
+      <p class="panel-heading">
+        <strong>Category</strong>
+      </p>
+      <div class="panel-block is-active">
+        <label class="checkbox">
+          <input type="checkbox">
+          Multivitamins
+        </label>
+      </div>
+      <div class="panel-block is-active">
+        <label class="checkbox">
+          <input type="checkbox">
+          Vitamin A-Z & Minerals
+        </label>
+      </div>
+      <div class="panel-block is-active">
+        <label class="checkbox">
+          <input type="checkbox">
+          Gummies
+        </label>
+      </div>
+      <div class="panel-block is-active">
+        <label class="checkbox">
+          <input type="checkbox">
+          Specialty Vitamins
+        </label>
+      </div>
+      <div class="panel-block">
+        <button class="button is-primary is-outlined is-fullwidth" ui-sref="underConstruction">
+          Apply filters
+        </button>
+      </div>
+    </nav>
+    <nav class="panel">
+      <p class="panel-heading">
+        <strong>Price Range</strong>
+      </p>
+      <div class="panel-block is-active" >
+        <label class="checkbox">
+          <input type="checkbox">
+          Under $50
+        </label>
+      </div>
+      <div class="panel-block is-active" >
+        <label class="checkbox">
+          <input type="checkbox">
+          $50 to $100
+        </label>
+      </div>
+      <div class="panel-block is-active" >
+
+        <div class="columns">
+          <div class="column">
+             <input class="input" type="text" placeholder="$ min" style="float: left">
+          </div>
+          <div class="column is-narrow" style="align-self: center; padding-left: 0; padding-right: 0;">
+            to
+          </div>
+          <div class="column">
+             <input class="input" type="text" placeholder="$ max" style="float: right">
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-block">
+        <button class="button is-primary is-outlined is-fullwidth" ui-sref="underConstruction">
+          Apply filters
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="column is-10">
+    <div ng-init="itemCount=34;" ng-include="'partials/product-header.html'"></div>
+    <div ng-include="'partials/product-list.html'" style="margin-top: 20px;"></div>
+    <nav class="pagination" style="margin-top: 20px;">
+      <a class="button is-disabled">Previous page</a>
+      <a class="button" ui-sref="underConstruction">Next page</a>
+      <ul>
+        <li>
+          <a class="button is-info" ui-sref="underConstruction">1</a>
+        </li>
+        <li>
+          <a class="button" ui-sref="underConstruction">2</a>
+        </li>
+        <li>
+          <a class="button" ui-sref="underConstruction">3</a>
+        </li>
+        <li>
+          <a class="button" ui-sref="underConstruction">4</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

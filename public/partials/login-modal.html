@@ -1,0 +1,25 @@
+<div class="modal" ng-class="{'is-active': master.loginModalShown}">
+  <form ng-submit="master.login(master.loginDetails)">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Login</p>
+        <button type="button" class="delete" ng-click="master.loginModalShown = false"></button>
+      </header>
+      <section class="modal-card-body">
+        <p class="control has-icon">
+          <input class="input" type="email" autofocus required placeholder="Email">
+          <i class="fa fa-envelope"></i>
+        </p>
+        <p class="control has-icon">
+          <input class="input" type="password" required placeholder="Password">
+          <i class="fa fa-lock"></i>
+        </p>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-primary">Login</button>
+        <a class="button" ng-click="master.loginModalShown = false">Cancel</a>
+      </footer>
+    </div>
+  </form>
+</div>

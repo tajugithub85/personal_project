@@ -1,0 +1,25 @@
+{
+  "name": "succotash",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist/*",
+    "build-bulma": "node-sass --source-map true --source-map-contents --include-path src src/bulma-customized.scss public/css/bulma-customized.css",
+    "watch-bulma": "node-sass --source-map true --source-map-contents -w --include-path src src/bulma-customized.scss public/css/bulma-customized.css",
+    "dist": "npm run build-bulma && npm run dist-copy && npm run dist-templates && npm run dist-docs",
+    "dist-copy": "cp -r public/* dist/ && rm -rf dist/partials",
+    "dist-docs": "cp public/README.md dist/README.txt",
+    "dist-templates": "nghtml2js --no-new-module -m 'succotash' -f 'public/partials/**/*.html' -p public/ -o dist/javascript/templates.js"
+  },
+  "author": "Team Eighth Wonder",
+  "dependencies": {
+    "bulma": "^0.2.3"
+  },
+  "devDependencies": {
+    "angular-template-cache": "^1.1.0",
+    "node-sass": "^3.10.1"
+  }
+}

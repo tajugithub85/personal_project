@@ -1,0 +1,51 @@
+<nav class="level">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+      <p class="subtitle is-5">
+        Items <strong>1-9</strong> of {{itemCount || 100}}
+      </p>
+    </div>
+  </div>
+<!--   <div class="level-item has-text-centered">
+    <p class="subtitle is-5">
+      Page <strong>1</strong> of {{((itemCount || 100) + 4) / 9 | number:0}}   <a ui-sref="underConstruction">>></a>
+    </p>
+  </div> -->
+  <!-- Right side -->
+  <div class="level-right">
+    <p class="level-item">
+      <strong>Sort by:</strong>
+    </p>
+    <p class="level-item">
+      <button class="button is-medium is-primary is-outlined st-has-dropdown"
+        ng-click="showSortMenu = !showSortMenu;"
+        ng-class="{'is-active': showSortMenu}" ng-init="selectedSort = 'Relevance'" style="width: 12em;">
+        <span>{{selectedSort}}</span>
+        <span class="icon">
+          <i class="fa fa-sort-desc"></i>
+        </span>
+        <span class="st-dropdown box">
+          <a class="panel-block" ng-click="selectedSort = 'Relevance'">
+            Relevance
+          </a>
+          <a class="panel-block" ng-click="selectedSort = 'Price: Low to high'">
+            Price: Low to high
+          </a>
+          <a class="panel-block" ng-click="selectedSort = 'Price: High to low'">
+            Price: High to low
+          </a>
+          <a class="panel-block" ng-click="selectedSort = 'Top Rated'">
+            Top Rated
+          </a>
+          <a class="panel-block" ng-click="selectedSort = 'Name A-Z'">
+            Name: A-Z
+          </a>
+          <a class="panel-block" ng-click="selectedSort = 'Name Z-A'">
+            Name: Z-A
+          </a>
+        </span>
+      </button>
+    </p>
+  </div>
+</nav>

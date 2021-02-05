@@ -1,0 +1,83 @@
+.pdtl-productName {
+	color: #00466b; 
+	font-size: 16px;
+	display: block;
+	width: 75%;
+}
+
+.pdtl-productPrice-old {
+	color: #000000; 
+	font-size: 16px;
+}
+
+.pdtl-productPrice {
+	color: #863f4b; 
+	font-size: 20px;
+}
+
+.pdtl-productReview {
+	color: #00466b; 
+	font-size: 18px;
+}
+
+.pdtl-wrapper > .tile > .tile {
+  padding: 20px 10px;
+}
+.pdtl-promotion-hero {
+  position: relative;
+  margin-bottom: 40px;
+  font-size: 0;
+}
+
+  .pdtl-promotion-hero .notification {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    font-size: initial;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+.product-image {
+  height: 500px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: white;
+  background-position: center center;
+}
+
+.product-image-small {
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: white;
+  background-position: center center;
+  display: inline-block;
+  border: solid 1px transparent;
+}
+
+.product-image-small.is-active {
+  border: solid 1px #771b61;
+}
+
+.product-tabs ~ .message-body {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.product-content-narrow {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+.product-comment-useful {
+  color: #006b54;
+}
+.card-body{
+  text-align: center;
+  display: flexbox;
+}

@@ -1,0 +1,39 @@
+<a class="title is-5 is-primary" ui-sref="home">Home</a>
+<span class="title is-primary">Nutrition</span>
+<br>
+<br>
+<br>
+<div class="columns">
+  <div class="column is-2">
+    <aside class="menu">
+      <p class="menu-label">Subcategories</p>
+      <ul class="menu-list">
+        <li><a ui-sref-active="is-active" ui-sref="productLineVita">Vitamins</a></li>
+        <li><a ui-sref="underConstruction">Protein</a></li>
+        <li><a ui-sref="underConstruction">Sports Nutrition</a></li>
+        <li><a ui-sref="underConstruction">Weight Loss</a></li>
+        <li><a ui-sref="underConstruction">Sugar Substitutes</a></li>
+      </ul>
+      <p class="menu-label">Brand</p>
+      <ul class="menu-list">
+        <li><a ui-sref="underConstruction">All</a></li>
+        <li><a ui-sref="underConstruction">Ensure</a></li>
+        <li><a ui-sref="underConstruction">Naturade</a></li>
+        <li><a ui-sref="underConstruction">Vega</a></li>
+        <li><a ui-sref="underConstruction">Radiance</a></li>
+      </ul>
+    </aside>
+  </div>
+  <div class="column is-10">
+    <div style="background-image: url(images/nutrition.jpg); background-position-y: 65%;">
+      <div class="notification is-primary has-text-right" style="background-image: linear-gradient(to left, rgba(119, 27, 97, 1), rgba(119, 27, 97, 0.3)); background-color: transparent;">
+        <span class="title is-1"><strong>30% OFF</strong> <a ui-sref="underConstruction" class="title is-2">Selected Brands.</a></span>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div ng-include="'partials/product-header.html'"></div>
+    <div ng-include="'partials/product-list.html'" style="margin-top: 20px;"></div>
+    <div ng-include="'partials/product-pagination.html'" style="margin-top: 20px;"></div>
+  </div>
+</div>

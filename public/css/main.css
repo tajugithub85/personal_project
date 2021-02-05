@@ -1,0 +1,67 @@
+/* Nav bar */
+
+.st-brand-nav {
+  z-index: 3; /* For dropdowns. */
+}
+
+.st-brand-nav .nav-left,
+.st-brand-nav .nav-right {
+  flex-basis: initial;
+  flex-grow: 0;
+}
+
+.st-secondary-nav {
+  padding-left: 20px;
+}
+
+.nav-item.st-expanded {
+  color: #363636;
+  background-color: #f0f0f0;
+}
+
+.st-product-tabs {
+  height: 0;
+  transition: height 0.5s ease;
+}
+
+.st-product-tabs.st-expanded {
+  height: 38px;
+}
+
+/* Dropdown menu */
+
+.st-has-dropdown {
+  position: relative;
+  min-width: 10em;
+}
+
+  .st-dropdown {
+    position: absolute;
+    align-self: flex-start;
+    z-index: 1000;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    color: #000;
+    padding: 5px;
+    text-align: initial;
+    display: none;
+  }
+
+  .st-has-dropdown.is-active .st-dropdown {
+    display: block;
+  }
+
+/* Footer */
+
+footer {
+  position: relative;
+}
+
+  .st-stamp {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    height: 80%;
+    width: auto;
+  }

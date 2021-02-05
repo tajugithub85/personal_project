@@ -1,0 +1,59 @@
+<a class="title is-5 is-primary" ui-sref="home">Home</a>
+<a class="title is-5 is-primary" ui-sref="productLineNutri">Nutrition</a>
+<a class="title is-5 is-primary" ui-sref="productLineVita">Vitamins</a>
+<span class="title is-primary">Multivitamins</span>
+<br>
+<br>
+<br>
+<div class="columns">
+  <div class="column is-2">
+    <aside class="menu">
+      <p class="menu-label">Subcategories</p>
+      <ul class="menu-list">
+        <li>
+          <a ui-sref="productLineVita">Vitamins</a>
+          <ul>
+              <li><a ui-sref-active="is-active" ui-sref="productLineMultivita">Multivitamins</a></li>
+              <li><a ui-sref="underConstruction">Vitamin A-Z & Minerals</a></li>
+              <li><a ui-sref="underConstruction">Gummies</a></li>
+              <li><a ui-sref="underConstruction">Specialty Vitamins</a></li>
+            </ul>
+        </li>
+        <li><a ui-sref="underConstruction">Protein</a></li>
+        <li><a ui-sref="underConstruction">Sports Nutrition</a></li>
+        <li><a ui-sref="underConstruction">Weight Loss</a></li>
+        <li><a ui-sref="underConstruction">Sugar Substitutes</a></li>
+      </ul>
+      <p class="menu-label">Brand</p>
+      <ul class="menu-list">
+        <li><a ui-sref="underConstruction">All</a></li>
+        <li><a ui-sref="underConstruction">Ensure</a></li>
+        <li><a ui-sref="underConstruction">Naturade</a></li>
+        <li><a ui-sref="underConstruction">Vega</a></li>
+        <li><a ui-sref="underConstruction">Radiance</a></li>
+      </ul>
+    </aside>
+  </div>
+  <div class="column is-10">
+    <div class="notification is-primary">
+      <span class="title is-1"><strong>50% OFF </strong></span>
+      <span class="title is-2">All Vitamins.</span>
+    </div>
+    <br>
+    <br>
+    <div ng-init="itemCount=10;" ng-include="'partials/product-header.html'"></div>
+    <div ng-include="'partials/product-list.html'" style="margin-top: 20px;"></div>
+    <nav class="pagination" style="margin-top: 20px;">
+      <a class="button is-disabled">Previous page</a>
+      <a class="button" ui-sref="underConstruction">Next page</a>
+      <ul>
+        <li>
+          <a class="button is-info" ui-sref="underConstruction">1</a>
+        </li>
+        <li>
+          <a class="button" ui-sref="underConstruction">2</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

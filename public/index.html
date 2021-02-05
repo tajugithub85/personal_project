@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="succotash" ng-controller="MasterCtrl as master">
+<head>
+  <meta charset="UTF-8">
+  <title>UPMC Online Pharmacy</title>
+  <link rel="stylesheet" href="./css/bulma-customized.css" media="all">
+  <link rel="stylesheet" href="./css/font-awesome.min.css" media="all">
+  <link rel="stylesheet" href="./css/main.css" media="all">
+  <link rel="stylesheet" href="./css/home.css" media="all">
+  <link rel="stylesheet" href="./css/productline.css" media="all">
+</head>
+<body>
+  <header ng-include="'partials/nav.html'"></header>
+  <div class="container is-fluid">
+    <main style="margin-top: 40px;" ui-view autoscroll></main>
+  </div>
+  <footer class="footer" ng-include="'partials/footer.html'"></footer>
+  <div ng-include="'partials/login-modal.html'"></div>
+  <div ng-include="'partials/registration-modal.html'"></div>
+
+  <script src="./javascript/jquery.js"></script>
+  <script src="./javascript/angular.js"></script>
+  <script src="./javascript/angular-ui-router.js"></script>
+  <script src="./javascript/succotash.js"></script>
+  <script src="./javascript/succotash.states.js"></script>
+  <script src="./javascript/succotash.search.js"></script>
+  <script src="./javascript/templates.js"></script>
+</body>
+</html>

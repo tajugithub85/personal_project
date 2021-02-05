@@ -1,0 +1,139 @@
+<nav class="nav st-brand-nav">
+  <div class="nav-left">
+    <a class="nav-item is-brand" ui-sref="home">
+      <img src="images/logo.png" alt="UPMC Logo">
+      <span class="title is-2 is-primary">Online Pharmacy</span>
+    </a>
+  </div>
+
+  <div class="nav-center">
+  </div>
+
+  <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <div class="nav-right nav-menu">
+    <span class="nav-item">
+      <span class="icon">
+        <i class="fa fa-phone"></i>
+      </span>
+      <span>1-800-UPMCPHA</span>
+    </span>
+    <span class="nav-item">
+      <a class="button is-primary is-outlined" ui-sref="underConstruction">
+        <i class="fa fa-comments"></i>
+        <span class="nav-item is-tab">Ask Our Pharmacist</span>
+      </a>
+    </span>
+    <span class="nav-item" ng-if="!master.user">
+      <button class="button" ng-click="master.showRegisterModal();">
+        <span>Register</span>
+      </button>
+      <button class="button is-primary" ng-click="master.showLoginModal();">
+        <span class="icon">
+          <i class="fa fa-user"></i>
+        </span>
+        <span>Login</span>
+      </button>
+    </span>
+    <span class="nav-item" ng-if="master.user">
+      <button class="button is-primary st-has-dropdown"
+        ng-click="master.showUserMenu = !master.showUserMenu;"
+        ng-class="{'is-active': master.showUserMenu}">
+        <span class="icon">
+          <i class="fa fa-user"></i>
+        </span>
+        <span>John Doe</span>
+        <span class="icon">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <span class="st-dropdown box">
+          <a class="panel-block" ui-sref="underConstruction">
+            <span class="panel-icon">
+              <i class="fa fa-info"></i>
+            </span>
+            Account Info
+          </a>
+          <a class="panel-block" ui-sref="underConstruction">
+            <span class="panel-icon">
+              <i class="fa fa-truck"></i>
+            </span>
+            Track My Order
+          </a>
+          <a class="panel-block" ui-sref="underConstruction">
+            <span class="panel-icon">
+              <i class="fa fa-list"></i>
+            </span>
+            Order History
+          </a>
+          <a class="panel-block" href="#"
+            ng-click="$event.preventDefault(); master.logout();">
+            <span class="panel-icon">
+              <i class="fa fa-sign-out"></i>
+            </span>
+            Log Out
+          </a>
+        </span>
+      </button>
+    </span>
+  </div>
+</nav>
+<nav class="nav has-shadow st-secondary-nav">
+  <div class="nav-left">
+    <a class="nav-item is-tab" ui-sref-active="is-active" ui-sref="home">Home</a>
+    <a class="nav-item is-tab" ng-click="master.toggleProductTabs()"
+      ng-class="{'is-active': master.isProductPage}">
+      <span>Product</span>
+      <span class="icon">
+        <i class="fa fa-angle-down" style="float: right;"></i>
+      </span>
+    </a>
+    <a class="nav-item is-tab" ui-sref="underConstruction">FAQ</a>
+    <a class="nav-item is-tab" ui-sref="underConstruction">Contact Us</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-item">
+      <form ng-submit="master.searchTerm && master.$state.go('searchResult', {term: master.searchTerm})">
+        <div class="control has-addons has-icon">
+          <input list="searchTerms" class="input" type="text" placeholder="Find a product" ng-model="master.searchTerm">
+          <datalist id="searchTerms">
+            <option value="nutrition">
+            <option value="vitamin">
+          </datalist>
+          <i class="fa fa-search"></i>
+          <button class="button is-primary">
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="nav-item">
+      <a class="button is-primary" ui-sref="cartSummary">
+        <span>Shopping Cart</span>
+        <span class="icon">
+          <i class="fa fa-shopping-cart"></i>
+        </span>
+        <span class="tag is-small" style="color:#771b61; font-weight: bold;"
+          ng-if="master.cartCount > 0">{{master.cartCount}}</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="tabs st-product-tabs" style="background-color: #f0f0f0"
+  ng-class="{'st-expanded': master.productTabsShown || master.isProductPage}">
+  <ul style="padding: 0 20px;">
+    <li ng-class="{'is-active': master.$state.$current.name.indexOf('productLine') === 0}">
+      <a ui-sref="productLineNutri">Nutrition</a>
+    </li>
+    <li><a ui-sref="underConstruction">Cold &amp; Flu</a></li>
+    <li><a ui-sref="underConstruction">Painkillers</a></li>
+    <li><a ui-sref="underConstruction">Diet &amp; Fitness</a></li>
+    <li><a ui-sref="underConstruction">Personal Care</a></li>
+    <li><a ui-sref="underConstruction">Antiseptic</a></li>
+    <li><a ui-sref="underConstruction">Skin Care</a></li>
+    <li><a ui-sref="underConstruction">Anticancer</a></li>
+  </ul>
+</div>

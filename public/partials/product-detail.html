@@ -1,0 +1,666 @@
+<h1 class="title" ng-if="productId != 2">Nature Made vitamin B6 100mg </h1>
+<h1 class="title" ng-if="productId == 2">Nature Made vitamin E 400 I.U. </h1>
+<p class="subtitle">Detailed information of medicine is provided in this page.</p>
+
+
+
+<div class="columns">
+  <div class="column">
+    <div ng-if="productId!=2" ng-init="picId = 1">
+      <div class="product-image" ng-if="picId == 1" style="background-image: url(images/VitaminB6.jpg)">
+      </div>
+      <div class="product-image" ng-if="picId == 2" style="background-image: url(images/1.png)">
+      </div>
+      <div class="product-image" ng-if="picId == 3" style="background-image: url(images/2.png)">
+      </div>
+      <br>
+      <div>
+        <a class="product-image-small" ng-click="picId = 1" ng-class="{'is-active': picId == 1}" style="background-image: url(images/VitaminB6.jpg)">
+        </a>
+        <a class="product-image-small" ng-click="picId = 2" ng-class="{'is-active': picId == 2}" style="background-image: url(images/1.png)">
+        </a>
+        <a class="product-image-small" ng-click="picId = 3" ng-class="{'is-active': picId == 3}" style="background-image: url(images/2.png)">
+        </a>
+      </div>
+    </div>
+    <div ng-if="productId==2" ng-init="picId = 1">
+      <div class="product-image" ng-if="picId == 1" style="background-image: url(images/VitaminE.jpg)">
+      </div>
+      <div class="product-image" ng-if="picId == 2" style="background-image: url(images/1.png)">
+      </div>
+      <div class="product-image" ng-if="picId == 3" style="background-image: url(images/2.png)">
+      </div>
+      <br>
+      <div>
+        <a class="product-image-small" ng-click="picId = 1" ng-class="{'is-active': picId == 1}" style="background-image: url(images/VitaminE.jpg)">
+        </a>
+        <a class="product-image-small" ng-click="picId = 2" ng-class="{'is-active': picId == 2}" style="background-image: url(images/1.png)">
+        </a>
+        <a class="product-image-small" ng-click="picId = 3" ng-class="{'is-active': picId == 3}" style="background-image: url(images/2.png)">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="column" >
+    <span ng-if ="productId != 2">
+
+    <h1 class="pdtl-productPrice-old"><strike><font size="5">$10.25</font></strike>  <span class="pdtl-productPrice"><font size="6">$5.15</font></span></h1></span>
+
+    <span ng-if ="productId == 2">
+    <h1 class="pdtl-productPrice-old"><strike><font size="5">$17.99</font></strike>  <span class="pdtl-productPrice"><font size="6">$8.99</font></span></h1></span>
+
+    <span class="icon is-primary"><i class="fa fa-star"></i></span>
+    <span class="icon"><i class="fa fa-star"></i></span>
+    <span class="icon"><i class="fa fa-star"></i></span>
+    <span class="icon"><i class="fa fa-star"></i></span>
+    <span class="icon"><i class="fa fa-star-half-o"></i></span>
+    <p> <font size = "4">Reviews(50)</font></p>
+
+
+    <div class="notification is-primary has-text-center">
+      <span class="title is-2"><strong>50% OFF!</strong></span>
+      <br>
+      <span class="subtitle is-7">*On Select Nature Made vitamins.</span>
+    </div>
+
+
+    <div class="column " style="align-self: center;">
+
+      <h6 style="display: inline-block; vertical-align: middle; margin-right: 1.5em;"><strong>Qty<span class="text-muted"> x</span></strong></h6>
+      <input type="number" class="input" value="1" min="1"
+        style="width: 7em; vertical-align: middle;"
+        ng-model="addCount" ng-init="addCount = 1">
+      <a class="button is-primary" ng-click="master.addToCart({productId: 2}, addCount)">
+       <span>+ Add to Cart</span>
+       <span class="icon">
+         <i class="fa fa-shopping-cart"></i>
+       </span>
+     </a>
+   </div>
+
+   <article class="message">
+    <div class="message-header">
+
+      <font size = "3" >Medicine Type </font>
+      <div style = "float: right;">
+     <a ui-sref="underConstruction" style="color: #ffffff"></a>
+      </div>
+    </div>
+    <div class="message-body">
+     <label class="panel-block">
+      <input type="radio" name="shipping" checked>
+      <STRONG>Softgels</STRONG>  <div style="float: right;"><a ui-sref="underConstruction">Check the details>></a></div>
+    </label>
+     <label class="panel-block">
+      <input type="radio" name="shipping" checked>
+      <STRONG>Hardpills</STRONG>  <div style="float: right;"><a  ui-sref="underConstruction">Check the details>></a></div>
+    </label>
+  </div>
+</article>
+
+</div>
+</div>
+
+<div class="tabs is-centered is-boxed product-tabs" style="margin: 0;" id="panelTabs">
+  <ul>
+    <li ng-class="{'is-active': activeTab === 'Details'}">
+      <a ng-click="activeTab = 'Details'">
+        <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
+        <span>Details</span>
+      </a>
+    </li>
+    <li ng-class="{'is-active': activeTab === 'Reviews'}">
+      <a ng-click="activeTab = 'Reviews'">
+        <span class="icon is-small"><i class="fa fa-comment"></i></span>
+        <span>Reviews</span>
+      </a>
+    </li>
+    <li ng-class="{'is-active': activeTab === 'Ingredients'}">
+      <a ng-click="activeTab = 'Ingredients'">
+        <span class="icon is-small"><i class="fa fa-list"></i></span>
+        <span>Ingredients</span>
+      </a>
+    </li>
+    <li ng-class="{'is-active': activeTab === 'Directions'}">
+      <a ng-click="activeTab = 'Directions'">
+        <span class="icon is-small"><i class="fa fa-user-md"></i></span>
+        <span>Directions</span>
+      </a>
+    </li>
+    <li ng-class="{'is-active': activeTab === 'Safety'}">
+      <a ng-click="activeTab = 'Safety'">
+        <span class="icon is-small"><i class="fa fa-hospital-o"></i></span>
+        <span>Safety</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class = "message-body" ng-show="activeTab == 'Details'">
+
+  <div class = "content product-content-narrow" ng-if="productId!=2">
+    <p>
+      Along with other B vitamins, vitamin B6, also called pyridoxine, supports cellular energy production. Vitamin B6 is also essential in the formation of red blood cells, which play a key role in transporting oxygen throughout the body. A vitamin B6 supplement may help you meet your daily B6 needs.</p>
+
+      <ul>
+        <li>Helps convert food into cellular energy</li>
+        <li>Essential for red blood cell formation</li>
+      </ul>
+
+      Nature Made vitamin B6 100mg is guaranteed to meet our high quality standards - it is made from carefully selected ingredients under strict manufacturing processes.
+      <ul>
+        <li>Nature Made is the #1 pharmacist recommended letter vitamin brand (1)</li>
+        <li>United States Pharmacopeia (USP) verified</li>
+        <li>No artificial flavors</li>
+        <li>No color added</li>
+        <li>No preservatives</li>
+        <li>No yeast or starch</li>
+        <li>Gluten-free</li>
+      </ul>
+    </div>
+
+    <div class = "content product-content-narrow" ng-if="productId==2">
+      <p>Vitamin E is a fat-soluble vitamin, which functions as an antioxidant.</p>
+      <ul>
+        <li>Essential nutrient for many cells, including heart muscle cells</li></ul>
+
+        Vitamin E is an antioxidant and is an essential nutrient for many cells, including heart muscle cells.
+        Nature Made vitamin E 400 IU d-alpha is guaranteed to meet our high quality standards - it is made from carefully selected ingredients under strict manufacturing processes.
+        <ul>
+          <li>Nature Made is the #1 pharmacist recommended letter vitamin brand (1)</li>
+          <li>USP verified</li>
+          <li>No artificial flavors</li>
+          <li>No color added</li>
+          <li>No preservatives</li>
+          <li>No yeast or starch</li>
+          <li>Gluten-free</li>
+          </ul>
+        </div>
+</div>
+
+
+  <div class = "message-body" ng-show="activeTab == 'Reviews'">
+    <p style = "text-align: center;">
+
+      <span style="float: left;">
+        Reviews <strong>1 to 5</strong> of 47
+      </span>
+      <span>
+        Pages 1 of 10
+      </span>
+      <span style = "float: right;">
+        <a class="button is-danger is-active" ui-sref="underConstruction" >Write a review</a>
+      </span>
+      <br>
+      <br>
+    </p>
+
+    <div ng-if = "productId!=2">
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Ostrong9</strong> <small>21 days ago</small> &nbsp &nbsp
+              <strong>Has What We Need!</strong>
+              <span style="float: right">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+              I can never find in store and so happy to find it on line, great price, quick delivery. Very convenient! I love Nature made brands. If you go on their website you can get points and get $$$ of future vitamins.
+            </p>
+          </div>
+          <div class="product-comment-useful">
+            <b>29</b> people have found this comment useful.
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Johnsmith</strong> <small>3 months ago</small> &nbsp &nbsp
+              <strong>Recommended By Nutrition Action Newsletter</strong>
+              <span style= "float: right;">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+
+              This multi-vitamin was recommended by the Nutrition Action Newsletter. It contains just the right amount of what is needed and not excessive amounts. It is a good insurance policy that I am getting what I need.
+            </p>
+          </div>
+          <div class="product-comment-useful">
+            <b>14</b> people have found this comment useful.
+          </div>
+        </div>
+      </article>
+    </div>
+
+
+
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Kimmichele</strong> <small>4 months ago</small> &nbsp &nbsp
+              <strong>Convenience!</strong>
+              <span style="float: right;">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+              I enjoy the convenience of receiving my vitamins in the mail especially because I have had problems finding them in the stock in the store.
+            </p>
+          </div>
+          <div class="product-comment-useful">
+            <b>7</b> people have found this comment useful.
+          </div>
+        </div>
+      </article>
+    </div>
+
+
+
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>JVP4444</strong> <small>4 months ago</small> &nbsp &nbsp
+              <strong>This Product Helps Keep Me Healthy.</strong>
+              <span style= "float: right;">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+
+              Complete vitamin and mineral health product for someone my age.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Audrey927</strong> <small>6 months ago</small> &nbsp &nbsp
+              <strong>Very Easy To Digest And A Good Product For The Money.</strong>
+              <span style= "float: right;">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+
+              This is only one of the Nature Made products that I use. It really meets my doctors request for me to tie vitamins and does not break the bank.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+    </div>
+
+    <div ng-if = "productId==2">
+
+
+          <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Vince9</strong> <small>2 days ago</small> &nbsp &nbsp
+              <strong>Nature Made Vitamin E 400IU - 300 Softgels</strong>
+              <span style="float: right">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+
+             Nature Made is my personal choice. I buy with confidence and have never been disappointed with the product. I prefer the softgel variety because it is easier to swallow. Nature Made vitamins always have an excellent shelve expiration date and pricing compared to other products.
+
+            </p>
+          </div>
+          <div class="product-comment-useful">
+            <b>89</b> people have found this comment useful.
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Teng09</strong> <small>3 months ago</small> &nbsp &nbsp
+              <strong>Use natural source vitamin E, look for d-alpha!</strong>
+              <span style= "float: right;">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+
+              Nature Made is the absolute best brand out there. But use vitamin E made from plants (d-alpha or natural source), not vitamin E made from petroleum (dl-alpha or synthetic). It takes twice as much dl-alpha to equal that of d-alpha! If you can't find d-alpha Nature Made, call 1-800-276-2878 and they will assist you.
+            </p>
+          </div>
+          <div class="product-comment-useful">
+            <b>5</b> people have found this comment useful.
+          </div>
+        </div>
+      </article>
+    </div>
+
+
+
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Champloo</strong> <small>4 months ago</small> &nbsp &nbsp
+              <strong>Cheap Price! </strong>
+              <span style="float: right;">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+
+              Purchased for my mom. Good Vitamin E. Cheaper price.
+            </p>
+          </div>
+          <div class="product-comment-useful">
+            <b>1</b> person has found this comment useful.
+          </div>
+        </div>
+      </article>
+    </div>
+
+
+
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Raina05</strong> <small>4 months ago</small> &nbsp &nbsp
+              <strong>This product has great features.</strong>
+              <span style= "float: right;">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+
+              I have been taking Nature Made Vitamin E for a long time and have been very satisfied with the product. Unfortunately, recently I have had to switch brands because I can not find the NatureMade vitamin E with d-Alpha Tocopherol and mixed Tocopherols. Just the kind that has Tocophyrols. I would still be buying NatureMade vitamin E if my store carried it.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="http://placehold.it/128x128" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>SSR</strong> <small>6 months ago</small> &nbsp &nbsp
+              <strong>Vitamin E capsules</strong>
+              <span style= "float: right;">
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+                <span class="icon is-small"><i class="fa fa-star"></i></span>
+              </span>
+              <br>
+
+              These are very easy to swallow and I believe they are good for your skin and eyes. They leave no bad aftertaste either.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+
+    </div>
+
+<br>
+
+    <nav class="pagination">
+<<<<<<< HEAD
+      <a class="button">Previous page</a>
+=======
+      <a class="button is-disabled">Previous page</a>
+>>>>>>> 63372dfced0b872e66f793ecf8be90e8fb7801b6
+      <a class="button">Next page</a>
+      <ul>
+        <li>
+          <a class="button is-primary">1</a>
+        </li>
+        <li>
+          <span>...</span>
+        </li>
+        <li>
+          <a class="button">4</a>
+        </li>
+        <li>
+          <a class="button">5</a>
+        </li>
+        <li>
+          <a class="button">6</a>
+        </li>
+        <li>
+          <span>...</span>
+        </li>
+        <li>
+          <a class="button">10</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class = "message-body" ng-show="activeTab == 'Ingredients'">
+
+    <h1> <STRONG><font size= "5">Supplement Facts(per tablet)</font></STRONG></h1>
+
+    <div ng-if = "productId!=2">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nutrient</th>
+          <th>Amount per Serving</th>
+          <th>%Daily Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vitamin B6 (as Pyridoxine Hydrochloride)</td>
+          <td>100 mg</td>
+          <td > 5000% </td>
+        </tr>
+        <tr>
+          <td>Calcium (as Calcium Carbonate)</td>
+          <td>30mg</td>
+          <td>3% </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Other Ingredients: Cellulose Gel, Croscarmellose Sodium, Hypromellose, Maltodextrin, Magnesium Stearate.</p>
+    <br>
+    </div>
+
+    <div ng-if = "productId==2">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nutrient</th>
+          <th>Amount per Serving</th>
+          <th>%Daily Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vitamin E </td>
+          <td>100 mg</td>
+          <td > 5000% </td>
+        </tr>
+        <tr>
+          <td>Calcium (as Calcium Carbonate)</td>
+          <td>30mg</td>
+          <td>3% </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Other Ingredients: Cellulose Gel, Croscarmellose Sodium, Hypromellose, Maltodextrin, Magnesium Stearate.</p>
+    <br>
+    </div>
+
+<div ng-if="productId!=2">
+    <h2><STRONG><font size= "5">Nutritional Facts(per tablet)</font></STRONG></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nutrient</th>
+          <th>Amount per Serving</th>
+          <th>%Daily Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vitamin B6 (as Pyridoxine Hydrochloride)</td>
+          <td>100 mg</td>
+          <td > 5000% </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div ng-if="productId==2">
+    <h2><STRONG><font size= "5">Nutritional Facts(per tablet)</font></STRONG></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nutrient</th>
+          <th>Amount per Serving</th>
+          <th>%Daily Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vitamin E(as Pyridoxine Hydrochloride)</td>
+          <td>100 mg</td>
+          <td > 5000% </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+  </div>
+
+
+  <div class = "message-body" ng-show="activeTab == 'Directions'">
+    <div class="content product-content-narrow">
+      Take one tablet daily, with a meal. For easier swallowing, take with water before and during ingestion.
+    </div>
+
+  </div>
+
+    <div class = "message-body" ng-show="activeTab == 'Safety'">
+    <div ng-if="productId!=2">
+      <div class="content product-content-narrow">
+        <p>Vitamin B6 should be avoided when taking: Consult a physician before use if you are taking any prescription medications, including anticonvulsants. Vitamin B6 should be used with caution when combined with: Anticonvulsant medications (i.e. phenobarbital, phenytoin).</p>
+        <p>Given that no two people are alike, if you are taking any medications you should be aware that potential drug-nutrient interactions may occur and are encouraged to consult a health care professional before using this product. Combining certain prescription drugs and dietary supplements can lead to undesirable effects such as: Diminished drug effectiveness, reduced supplement effectiveness, impaired drug and/or supplement absorption.</p>
+      </div>
+      </div>
+
+      <div ng-if="productId==2">
+        <div class="content product-content-narrow">
+          Consult a doctor if you have a medical condition prior to use. Consult a doctor if you have diabetes.
+        </div>
+      </div>
+    </div>
